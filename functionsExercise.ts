@@ -8,6 +8,11 @@
 // twoFer() => "One for you, one for me"
 // twoFer("Elton") => "One for Elton, one for me"
 
+const toHugo = (name: string = 'you'): string => {
+  return `One for ${name}, one for me.`;
+}
+
+
 // **********************************************
 // ******************* PART 2 *******************
 // **********************************************
@@ -21,3 +26,19 @@
 // OR...
 // - year is a multiple of 400
 // hint - use modulo
+
+const isLeapYear = (year: number): boolean => {
+  const isMultilpleFour = year % 4 === 0;
+  const isMultipleOneHundred = year % 100 !== 0;
+  const isMultipleFourHundred = year % 400 === 0;
+
+  return (isMultilpleFour && isMultipleOneHundred) || isMultipleFourHundred;
+
+  /* if (isMultilpleFour && !isMultipleOneHundred) {
+    return true
+  } else if (isMultipleFourHundred) {
+    return true
+  } else {
+    return false
+  } */
+}
